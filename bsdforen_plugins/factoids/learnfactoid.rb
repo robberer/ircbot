@@ -16,7 +16,8 @@ class LearnFactoid
       key = ary[0].strip
       value = ary[1].strip
 
-      r = factoids.where('factoid_value = ? AND factoid_value = ?', key, value).select
+      #r = factoids.where('factoid_value = ? AND factoid_value = ?', key, value).select
+      r = factoids.where('factoid_key = ? AND factoid_value = ?', key, value).select
 
       if r.empty?
         factoids.insert(:factoid_key => key, :factoid_value => value, :factoid_author => m.user.to_s,

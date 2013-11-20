@@ -14,7 +14,7 @@ USERNAME = 'analtux'
 REALNAME = 'Analtux NG http://bsdforen.de'
 IRCNET = 'irc.freenode.org'
 CHANNELS = ['#bsdforen.de']
-PLUGINS = [GetFactoid, LearnFactoid, ForgetFactoid, Cinch::Plugins::Identify, Cinch::Plugins::Calculate, 
+PLUGINS = [GetRandomNumber, GetFactoid, LearnFactoid, ForgetFactoid, Cinch::Plugins::Identify, Cinch::Plugins::Calculate, 
   Cinch::Plugins::DownForEveryone]
 
 class IRCBot

@@ -11,7 +11,7 @@ class GetFactoid
     case
     when m.message == '!info'
       r = factoids.order{rand{}}.first
-      m.reply "#{r[:factoid_key]}: #{r[:factoid_value]} [#{r[:factoid_author]} " +
+      m.reply "#{r[:factoid_key]} = #{r[:factoid_value]} [#{r[:factoid_author]} " +
         "#{r[:factoid_timestamp].strftime('%Y-%m-%d')}]"
       
     when m.message =~ /!info .*/
@@ -19,7 +19,7 @@ class GetFactoid
       r = factoids.where('factoid_key = ?', key).select
       
       unless r.empty?
-        str = "#{key}:"
+        str = "#{key} ="
         r.each do |s|
           str << " #{s[:factoid_value]} [#{s[:factoid_author]} " +
             "#{s[:factoid_timestamp].strftime('%Y-%m-%d')}] ||"
